@@ -25,7 +25,6 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 		<foreach doc:name="For Each" doc:id="88b97510-160b-4aec-b0b9-229d1e0fba1f" >
 			<set-variable value="#[payload.key]" doc:name="Set Variable" doc:id="d1e45b7a-329d-4ea9-82d3-bf92bf9593ab" variableName="fileName"/>
 			<s3:get-object doc:name="Get object" doc:id="5affcbc5-15bb-4968-917b-98493391f70c" config-ref="Amazon_S3_Configuration" bucketName="#[payload.bucketName]" key="#[payload.key]"/>
-			<logger level="INFO" doc:name="Logger" doc:id="587b3cc4-436d-4c38-b193-c36b9dccc34a" />
 			<file:write doc:name="Write" doc:id="74c442cc-2eea-4c35-b41a-0e1250c54280" path="#[vars.outputDir ++ vars.fileName]"/>
 		</foreach>
 	</flow>
