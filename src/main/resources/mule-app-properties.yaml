@@ -1,3 +1,6 @@
 aws:
   key: 
   secret: 
+  bucketName: partner.workshop01
+output:
+  dir: /Users/dejimjuang/Workspace/studio-seven/aws-s3-example/src/main/resources/
